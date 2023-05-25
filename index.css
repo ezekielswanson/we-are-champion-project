@@ -1,3 +1,19 @@
+
+/** Font ****/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Josefin+Sans:wght@400;500;700&family=Roboto+Condensed&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+h1, 
+h2,
+h3,
+h4 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -26,4 +42,31 @@ html, body {
 .card-title__wrapper h1 {
     color: #fff;
     font-size: 1.563rem;
+    font-weight: 700;
 }
+
+.card-input-wrapper input::placeholder {
+    color: #8F8F8F;
+    font-family: 'Inter', sans-serif;
+    height: 118px;
+    font-size:1 16px;
+    line-height: 18.15px;
+    font-weight: 400;
+
+}
+
+
+.card-input-wrapper .card-input__main input {
+    background-color: #444059;
+    cursor: pointer;
+    width: 317px;
+    height: 118px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    resize: none;
+    padding: 20px;
+}
+
+
