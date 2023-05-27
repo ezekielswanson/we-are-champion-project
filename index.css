@@ -56,10 +56,11 @@ html, body {
 }
 
 
-.card-input-wrapper .card-input__main input {
+.card-input-wrapper .card-input__main #endorsement-input {
     background-color: #444059;
     cursor: pointer;
-    width: 317px;
+    width: 100%;
+    width: 354px;
     height: 118px;
     border-radius: 8px;
     border: none;
@@ -67,6 +68,68 @@ html, body {
     justify-content: flex-start;
     resize: none;
     padding: 20px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+
+}
+
+.card-input-wrapper .card-input__names {
+    display: flex;
+    flex-direction: row;
+    gap: 9.29px;
+    margin-top: 9px;
+
 }
 
 
+.card-input-wrapper .card-input__names input {
+    background-color: #444059;
+    cursor: pointer;
+    width: 152.85px;
+    padding: 6px 7px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    resize: none;
+    padding: 20px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+
+}
+
+
+
+.card-input-wrapper button {
+    background-color: #28A9F1;
+    padding: 7px 1px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #000;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 9px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 22px;
+
+
+}
+
+
+.endorsements-display-wrapper .endorsements-display__title h1 {
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+/* style your new created div element w/ this
+.endorsements-display-wrapper .endorsements-display__box {
+    padding: 13px 15px;
+    background-color: #fff;
+
+    
+}
+
+*/
