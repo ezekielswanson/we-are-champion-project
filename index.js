@@ -35,3 +35,7 @@ sumbitBtn.addEventListener('click', function() {
     console.log(endorseVal)
     
 })
+
+function createEndorsementEl() {
+    
+}
