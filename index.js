@@ -18,8 +18,11 @@ const endoresemntInput = document.getElementById('endorsement-input');
 const fromInput = document.getElementById('from-name');
 const toInput = document.getElementById('to-name');
 const sumbitBtn = document.getElementById('submit-btn');
+const endoresemntContainer = document.querySelector('.endorsements-display__list-container');
 
 
+
+//Getting input values and pushing into database 
 sumbitBtn.addEventListener('click', function() {
     let endorseVal = endoresemntInput.value;
     let fromVal = fromInput.value;
@@ -32,10 +35,19 @@ sumbitBtn.addEventListener('click', function() {
     }
 
     push(endoresementlistInDB, dataToPush)
-    console.log(endorseVal)
+    
+    createEndorsementEl();
     
 })
 
-function createEndorsementEl() {
-    
+
+
+
+function createEndorsementEl(dataToPush) {
+    let newEndorsementItem = document.createElement('li');
+    newEndorsementItem.textContent = `${dataToPush.endorsement} 
+    ${dataToPush.from} ${dataToPush.to}
+    `
+
+    endoresemntContainer.appendChild(newEndorsementItem);
 }
