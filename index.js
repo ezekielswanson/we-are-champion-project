@@ -1,5 +1,5 @@
 
-
+//Importing app
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
@@ -13,7 +13,7 @@ const database = getDatabase(app)
 const endoresementlistInDB = ref(database, "endorsementList")
 
 
-
+//Variables
 const endoresemntInput = document.getElementById('endorsement-input');
 const fromInput = document.getElementById('from-name');
 const toInput = document.getElementById('to-name');
@@ -29,25 +29,30 @@ sumbitBtn.addEventListener('click', function() {
     let toVal =  toInput.value;
 
     let dataToPush = {
-        endorsement: 'endorseVal',
-        from: 'fromVal',
-        to: 'toVal'
+        endorsement: endorseVal,
+        from: fromVal,
+        to: toVal
     }
-
-    push(endoresementlistInDB, dataToPush)
-    
-    createEndorsementEl();
+    push(endoresementlistInDB, dataToPush);
+    createEndorsementEl(dataToPush);
     
 })
 
 
 
 
+//Create endorsement div elemenet
 function createEndorsementEl(dataToPush) {
-    let newEndorsementItem = document.createElement('li');
-    newEndorsementItem.textContent = `${dataToPush.endorsement} 
-    ${dataToPush.from} ${dataToPush.to}
+    let endorsementDiv = document.createElement('div')
+    endorsementDiv.classList.add('endorsements-display__list-desc')
+    endorsementDiv.innerHTML = `
+    <span>To ${dataToPush.from}</span>
+    <p>${dataToPush.endorsement}</p>
+    <span>${dataToPush.to}</span>
     `
+    endoresemntContainer.appendChild(endorsementDiv);
+    console.log('works');
 
-    endoresemntContainer.appendChild(newEndorsementItem);
 }
+
+
