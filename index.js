@@ -40,6 +40,18 @@ sumbitBtn.addEventListener('click', function() {
 
 
 
+//Updating Items in Realtim
+onValue(endoresementlistInDB,function(snapshot){
+    let endorsementsArray = Object.values(snapshot.val());
+
+    for (let i=0; i < endorsementsArray.length; i++) {
+        console.log(endorsementsArray[i])
+    }
+
+})
+
+
+
 
 //Create endorsement div elemenet
 function createEndorsementEl(dataToPush) {
@@ -54,5 +66,6 @@ function createEndorsementEl(dataToPush) {
     console.log('works');
 
 }
+
 
 
