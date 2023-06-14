@@ -22,6 +22,8 @@ const endoresemntContainer = document.querySelector('.endorsements-display__list
 
 
 
+
+
 //Getting input values and pushing into database 
 sumbitBtn.addEventListener('click', function() {
     let endorseVal = endoresemntInput.value;
@@ -35,17 +37,26 @@ sumbitBtn.addEventListener('click', function() {
     }
     push(endoresementlistInDB, dataToPush);
     createEndorsementEl(dataToPush);
+    clearInputs(dataToPush);
     
 })
 
 
+//Clears Input
+function clearInputs(dataToPush) {
+    dataToPush.endorsement = "";
+    dataToPush.from = "";
+    dataToPush.to = "";
 
-//Updating Items in Realtim
+}
+
+
+//Updating Items in Realtime
 onValue(endoresementlistInDB,function(snapshot){
     let endorsementsArray = Object.values(snapshot.val());
 
     for (let i=0; i < endorsementsArray.length; i++) {
-        console.log(endorsementsArray[i])
+        endoresemntContainer.innerHTML = "";
     }
 
 })
@@ -63,7 +74,6 @@ function createEndorsementEl(dataToPush) {
     <span>${dataToPush.to}</span>
     `
     endoresemntContainer.appendChild(endorsementDiv);
-    console.log('works');
 
 }
 
